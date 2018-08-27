@@ -17,8 +17,8 @@
 	ResultSet rs=ps.executeQuery();
 	while (rs.next())
 		{
-		&>
-	<br/>
+		%>
+	<br>
 	<%
 		out.print(rs.getString(3));
 	}
