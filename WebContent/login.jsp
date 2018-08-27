@@ -17,11 +17,28 @@
 	ResultSet rs=ps.executeQuery();
 	while (rs.next())
 	{
-		out.print(rs.getString(2));
+		%>
+                <table border="1" width="1" cellspacing="1" cellpadding="1">
+                    <thead>
+                        <tr>
+                            <th>Book</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><%=out.print(rs.getInt(1))%></td>
+                            <td><%=out.print(rs.getString(2))%></td>
+                            <td><%=out.print(rs.getString(3))%></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+                
+                <%
 	}
-
-
-
 %>
 
 
