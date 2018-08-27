@@ -19,6 +19,6 @@
 	{
 		out.print("AMMU");
 	}
-	
+	%>
 </body>
 </html>
