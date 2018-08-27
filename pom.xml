@@ -5,7 +5,7 @@
 	<artifactId>MyDatabase</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>ServletDbTest</name>
+	<name>PowerClaim</name>
 	<build>
 	<finalName>ROOT</finalName>
 		<sourceDirectory>src</sourceDirectory>
