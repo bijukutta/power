@@ -16,7 +16,7 @@
 	PreparedStatement ps=con.prepareStatement("SELECT * FROM products");
 	ResultSet rs=ps.executeQuery();
 %>
-	<table border="1" width="1" cellspacing="1" cellpadding="1">
+	<table width = "75%" border="1" width="1" cellspacing="1" cellpadding="1">
     <thead>
         <tr>
             <th>SL</th>
@@ -31,9 +31,9 @@
 		
 		%>
                 <tr>
-                    <td width 30> <% out.print(rs.getInt(1)); %> </td>
-                    <td width 50> <% out.print(rs.getString(2)); %> </td>
-                    <td width 120> <% out.print(rs.getString(3)); %> </td>
+                    <td width 20%> <% out.print(rs.getInt(1)); %> </td>
+                    <td width 40%> <% out.print(rs.getString(2)); %> </td>
+                    <td width 40%> <% out.print(rs.getString(3)); %> </td>
                 </tr>
 		<%
 	}
