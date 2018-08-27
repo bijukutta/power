@@ -19,7 +19,7 @@
 		{
 		
 		%>
-			<% out.print(rs.getString(3));%> <br>
+			<%= out.print(rs.getString(3))%> <br>
 		<%
 	}
 	%>
