@@ -17,7 +17,7 @@
 	ResultSet rs=ps.executeQuery();
 	while (rs.next())
 	{
-		out.print("Biju");
+		out.print(rs.getString(2));
 	}
 
 
