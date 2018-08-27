@@ -46,17 +46,56 @@ public class AddProduct extends HttpServlet {
 		String user = DBInfo.getUser();
 		String password = DBInfo.getPassword();
 
+		try {
+
 			Class.forName(DBInfo.getDriver());
+		} catch (ClassNotFoundException e) {
+			System.out.println("Error. Driver class not found: " + e);
+		}
+		
+		try {
 			connection = DriverManager.getConnection(dbURL, user, password);
+		} catch (SQLException e) {
+			System.out.println("Error. Connection problem: " + e);
+			return;
+		}
+		
+		
+		try {
 			statement = connection.prepareStatement("INSERT INTO products (id, title, description, price) VALUES (0,?,?,?)");
+			
 			statement.setString(1,title);
 			statement.setString(2, description);
 			statement.setFloat(3, price);		
+		} catch (SQLException e) {
+			System.out.println("Error. Can not create the statement: " + e);
+			return;
+		}
+		
+		
+		
+		try {
+					
 			statement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Error. Problem with executeUpdate: " + e);
+			return;
+		}
+		
+		try {
 			connection.close();
+		} catch (SQLException e) {
+			System.out.println("Error. Problem with closing connection: " + e);
+			return;
+		}
 		
 		RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/addingOk.jsp");
 		disp.forward(request, response);
+
+		
+		
+		
+
 	}
 
 	/**
