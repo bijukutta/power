@@ -16,7 +16,7 @@
 	PreparedStatement ps=con.prepareStatement("SELECT * FROM products");
 	ResultSet rs=ps.executeQuery();
 %>
-	<table border="1" width="1" cellspacing="1" cellpadding="1">
+	<table width="1024" border="1" width="1" cellspacing="1" cellpadding="1">
     <thead>
         <tr>
             <th>SL</th>
