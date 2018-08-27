@@ -19,9 +19,9 @@
 	<table border="1" width="1" cellspacing="1" cellpadding="1">
     <thead>
         <tr>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>SL</th>
+            <th> Name</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
@@ -31,9 +31,9 @@
 		
 		%>
                 <tr>
-                    <td> <% out.print(rs.getInt(1)); %> </td>
-                    <td> <% out.print(rs.getString(2)); %> </td>
-                    <td> <% out.print(rs.getString(3)); %> </td>
+                    <td width 30> <% out.print(rs.getInt(1)); %> </td>
+                    <td width 50> <% out.print(rs.getString(2)); %> </td>
+                    <td width 120> <% out.print(rs.getString(3)); %> </td>
                 </tr>
 		<%
 	}
