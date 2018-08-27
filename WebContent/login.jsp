@@ -15,33 +15,32 @@
 	Connection con=DriverManager.getConnection("jdbc:mysql://jws-app-mysql:3306/llc","user","password");
 	PreparedStatement ps=con.prepareStatement("SELECT * FROM products");
 	ResultSet rs=ps.executeQuery();
+	%>
+	
+		<table border="1" width="1" cellspacing="1" cellpadding="1">
+		    <thead>
+			<tr>
+			    <th>Book</th>
+			    <th>Description</th>
+			    <th>Amount</th>
+			</tr>
+		    </thead>
+	<%
 	while (rs.next())
 	{
 		%>
-                <table border="1" width="1" cellspacing="1" cellpadding="1">
-                    <thead>
-                        <tr>
-                            <th>Book</th>
-                            <th>Description</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
-                            <td><%=out.print(rs.getInt(1))%></td>
-                            <td><%=out.print(rs.getString(2))%></td>
-                            <td><%=out.print(rs.getString(3))%></td>
+                            <td> <%=out.print(rs.getInt(1))%> </td>
+                            <td> <%=out.print(rs.getString(2))%> </td>
+                            <td> <%=out.print(rs.getString(3))%> </td>
                         </tr>
-                    </tbody>
-                </table>
-
-                
                 
                 <%
 	}
 %>
 
-
-
+                    </tbody>
+                </table>
 </body>
 </html>
