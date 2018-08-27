@@ -19,9 +19,8 @@
 		{
 		
 		%>
-	<br>
-	<%
-		out.print(rs.getString(3));
+			<%=out.print(rs.getString(3));%> <br>
+		<%
 	}
 	%>
 </body>
