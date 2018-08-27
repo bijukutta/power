@@ -16,8 +16,11 @@
 	PreparedStatement ps=con.prepareStatement("SELECT * FROM products");
 	ResultSet rs=ps.executeQuery();
 	while (rs.next())
-	{
-		out.print("AMMU");
+		{
+		&>
+	<br>
+	<%
+		out.print(rs.getString(3));
 	}
 	%>
 </body>
