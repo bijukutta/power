@@ -48,40 +48,18 @@ public class ListProducts extends HttpServlet {
 		String dbURL = DBInfo.getDBURL();
 		String user = DBInfo.getUser();
 		String password = DBInfo.getPassword();
-
-		try {
-
+                
+                
+                
 			Class.forName(DBInfo.getDriver());
-		} catch (ClassNotFoundException e) {
-			System.out.println("Error. Driver class not found: " + e);
-		}
-
-		try {
 			connection = DriverManager.getConnection(dbURL, user, password);
-		} catch (SQLException e) {
-			System.out.println("Error. Connection problem: " + e);
-			return;
-		}
-
-		try {
 			statement = connection.createStatement();
-		} catch (SQLException e) {
-			System.out.println("Error. Can not create the statement: " + e);
-			return;
-		}
-
 		String searchString = "SELECT * FROM products";
-		try {
 			result = statement.executeQuery(searchString);
-		} catch (SQLException e) {
-			System.out.println("Error. Problem with executeUpdate: " + e);
-			return;
-		}
 
 		// Now we collect the data from the result in order to display them in
 		// JSP
 
-		try {
 			while (result.next()) {
 				Book book = new Book();
 				String title = result.getString("title");
@@ -94,17 +72,7 @@ public class ListProducts extends HttpServlet {
 				book.setPrice(price);
 				bookList.add(book);
 			}
-		} catch (SQLException e) {
-			System.out.println("Error. Problem reading data: " + e);
-			return;
-		}
-
-		try {
 			connection.close();
-		} catch (SQLException e) {
-			System.out.println("Error. Problem with closing connection: " + e);
-			return;
-		}
 
 		RequestDispatcher disp = request
 				.getRequestDispatcher("/WEB-INF/showBookList.jsp");
